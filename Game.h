@@ -4,22 +4,23 @@
 
 #include <Window.h>
 #include <Ball.h>
+#include <Player.h>
 class Game
 {
 private:
     Window window;
-    Ball ball;
-    sf::Clock clock;
+    Ball *ball;
+    Player pl1;
+    Player pl2;
     sf::Time timeStep = sf::seconds(1.f / 60.f);
-    sf::Time elapseTime = sf::Time::Zero;
 public:
     Game();
     ~Game();
+    void newGame();
+    void checkCollision();
     void handleTnput();
-    void update();
+    void update(sf::Time timeStep);
     void render();
-    sf::Time getElapsed();
-    void restartClock();
     void runGame();
 };
 

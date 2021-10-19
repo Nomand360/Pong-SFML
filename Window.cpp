@@ -10,7 +10,7 @@ void Window::setupWindow(const sf::Vector2u &size, const std::string title)
 void Window::create()
 {
     this->window.create({this->window_size.x, this->window_size.y}, this->window_title, sf::Style::Default);
-    this->window.setVerticalSyncEnabled(true);
+    this->window.setFramerateLimit(60);
 }
 
 void Window::destroy()
