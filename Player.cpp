@@ -37,7 +37,7 @@ const sf::FloatRect Player::getBottomOfPaddie()
 
 void Player::checkCollision(sf::Vector2u size)
 {
-    if(this->player.getPosition().y < 0.f && (this->dir != Direction::Down)){
+    if(this->player.getPosition().y <= 0.f && (this->dir != Direction::Down)){
         this->setDirection(Direction::None);
     }
     if(this->player.getPosition().y + this->player.getSize().y >= size.y && (this->dir != Direction::Up)){
